@@ -40,7 +40,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA1BA6v9GVCsUoIMlt5jYt_pfs8NN2Je8c',
+    apiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     appId: '1:42282936139:android:2ca47e9ca14ef899fa2ace',
     messagingSenderId: '42282936139',
     projectId: 'live-score-app-777e3',
