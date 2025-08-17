@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:42282936139:android:2ca47e9ca14ef899fa2ace",
+        "mobilesdk_app_id": "1:42282936139:android:xxx",
         "android_client_info": {
           "package_name": "com.example.live_score_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA1BA6v9GVCsUoIMlt5jYt_pfs8NN2Je8c"
+          "current_key": "xxx"
         }
       ],
       "services": {
