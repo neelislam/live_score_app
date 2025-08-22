@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'details.dart';
 import 'model/model_class.dart';
 
@@ -34,18 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
           }
 
           List<LiveScore> listOfScore = snapshots.data!.docs.map((doc) {
+            final data = doc.data();
             return LiveScore(
               id: doc.id,
-              team1: doc.get('team1'),
-              team2: doc.get('team2'),
-              team1_score: doc.get('team1_score'),
-              team2_score: doc.get('team2_score'),
-              isRunning: doc.get('isRunning'),
-              winner_team: doc.get('winner_team'),
-              time: doc.get('time'),
-              total_time: doc.get('total_time'),
-              team1_logo: doc.get('team1_logo'),
-              team2_logo: doc.get('team2_logo'),
+              team1: data['team1'] as String,
+              team2: data['team2'] as String,
+              team1_score: data['team1_score'] as int,
+              team2_score: data['team2_score'] as int,
+              isRunning: data['isRunning'] as bool,
+              winner_team: data['winner_team'] as String,
+              time: data['time'] as String,
+              total_time: data['total_time'] as String,
+              team1_logo: data['team1_logo'] as String,
+              team2_logo: data['team2_logo'] as String,
             );
           }).toList();
 
@@ -59,15 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          DetailsScreen(liveScore: liveScore),
+                      builder: (context) => DetailsScreen(liveScore: liveScore),
                     ),
                   );
                 },
                 leading: CircleAvatar(
                   radius: 8,
-                  backgroundColor:
-                  liveScore.isRunning ? Colors.green : Colors.grey,
+                  backgroundColor: liveScore.isRunning ? Colors.green : Colors.grey,
                 ),
                 title: Text("${liveScore.team1} vs ${liveScore.team2}"),
                 subtitle: Column(
